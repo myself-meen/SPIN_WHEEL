@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Truths and a Lie - Spin Wheel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Two Truths and a Lie</h1>
+        
+        <!-- Input Form -->
+        <div class="input-section">
+            <h2>Section <span id="current-section">1</span> of <span id="total-sections">20</span></h2>
+            <div class="form-group">
+                <input type="text" id="statement1" placeholder="Enter first statement" maxlength="100">
+                <input type="text" id="statement2" placeholder="Enter second statement" maxlength="100">
+                <input type="text" id="statement3" placeholder="Enter third statement" maxlength="100">
+            </div>
+            <div class="button-group">
+                <button id="save-section" class="btn primary">Save Section</button>
+                <button id="edit-mode" class="btn secondary">Edit Mode</button>
+                <button id="reset-all" class="btn danger">Reset All</button>
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+            <span class="progress-text" id="progress-text">0/20 sections filled</span>
+        </div>
+
+        <!-- Spin Wheel -->
+        <div class="wheel-container">
+            <div class="wheel-wrapper">
+                <canvas id="wheel" width="400" height="400"></canvas>
+                <div class="pointer"></div>
+            </div>
+            <button id="spin-btn" class="btn spin-btn" disabled>Spin the Wheel!</button>
+        </div>
+
+        <!-- Results -->
+        <div class="results" id="results" style="display: none;">
+            <h3>Selected Statements (Section <span id="selected-section-num"></span>):</h3>
+            <div class="statements">
+                <p id="result-statement1"></p>
+                <p id="result-statement2"></p>
+                <p id="result-statement3"></p>
+            </div>
+            <div class="result-actions">
+                <button id="keep-section" class="btn primary">Keep on Wheel</button>
+                <button id="remove-section" class="btn danger">Remove from Wheel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
